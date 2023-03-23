@@ -29,12 +29,12 @@ class wordle:
      def run(self, ):
           
           game_word = random.choice(self.words)
-          game_word = game_word
+          
           
           num_try = 6
           success = False
           
-          while True:
+          while num_try:
                guess_word = input(f'Enter a {self.word_len} letter word (or q to exit): ')
                guess_word = guess_word
                if guess_word == 'q':
@@ -65,12 +65,19 @@ class wordle:
                #check success
                if game_word == guess_word:
                     print()
-                    print_success('Congratulations!')
+                    print_success('************************')
+                    print_success('************************')
+                    print_success('*** Congratulations! ***')
+                    print_success('************************')
+                    print_success('************************')
                     success = True
                     break
 
                num_try -=1
           if not success:
-               print_warning(f'The word was {self.word} ):! GAME OVER !:(')
+               print()
+               print_warning('oh no')
+               print_warning('):! GAME OVER !:(')
+               print_warning(f'The word was  ""|| { game_word } ||""  ')
           
                
